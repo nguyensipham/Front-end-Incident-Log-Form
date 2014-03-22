@@ -1,0 +1,74 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8" />
+    <meta name="author" content="Nguyen Si Pham" />
+    <meta name="description" content="Simple Form" />
+    <meta name="keywords" content="" />
+    <title>Simple Form</title>    
+    <meta name="viewport" content="width=device-width, initial-scale=1">    
+	<link href="Content/jquery-ui.css" rel="stylesheet" />
+    <link href="Content/bootstrap.css" rel="stylesheet" />
+    <link href="Content/Site.css" rel="stylesheet" />
+</head>
+<body>    
+    <section class="container-fluid">        
+        <div class="row">
+            <h1>Incident Log Form</h1>
+        </div>
+        <div class="row">
+            <form id="simpleForm" name="simpleForm" class="col-md-8 col-md-offset-2" novalidate>
+                <fieldset>
+                    <legend>Please fill in the fields below</legend>
+                    
+                    <label for="aDate">Date</label>
+                    <input id="aDate" name="aDate" type="text" data-role="validate" value="" data-content="A Date is required." required title="Date" placeholder="dd/mm/yyyy" 
+                        data-container="body" data-trigger="manual"/>
+
+                    <br />
+
+                    <label for="name">Your Name</label>
+                    <input id="name" name="name" type="text" data-role="validate" required title="Name" data-toggle="popover" data-content="A Name is required." 
+                        placeholder="Your Name" data-container="body" data-trigger="manual"/>
+
+                    <br />
+
+                    <label for="email">Your Email</label>
+                    <input id="email" name="email" type="email" data-role="validate" required title="Email" data-content="A valid Email address is required." 
+                        placeholder="Your Email" data-container="body" data-trigger="manual"/>
+
+                    <br />
+
+                    <label for="details">Details of Problem</label>
+                    <textarea id="details" name="details" rows="10" cols="30" required data-role="validate" title="Details of problem" placeholder="Description of Problem" 
+                        data-content="Details of problem is required." data-container="body" data-trigger="manual"></textarea>
+
+                    <br />
+
+                    <button id="submit" class="btn btn-primary">Submit</button>
+                    <button id="cancel" type='button' class="btn btn-primary">Cancel</button>
+                </fieldset>
+            </form>
+        </div>        
+    </section>
+
+    <section style="display:none" id="msg" class="container-fluid">
+        <div class="col-md-8 col-md-offset-2 msg">
+            <h3>Incident Complete. Thank you for submitting your incident.</h3>
+            <h4>Details of the incident are provided below</h4>
+            <div class="detail">
+                <div class="field">Date</div><div id="dateValue" class="value"></div><br />
+                <div class="field">Your Name</div><div id="nameValue" class="value"></div><br />
+                <div class="field">Your Email</div><div id="emailValue" class="value"></div><br />
+                <div class="field">Details of Incident</div><div id="detailsValue" class="value"></div><br />
+            </div>
+        </div>
+    </section>
+        
+    <script src="Scripts/jquery-1.9.1.js"></script>
+	<script src="Scripts/jquery-ui.js"></script>
+    <script src="Scripts/bootstrap.js"></script>
+    <script src="ckeditor/ckeditor.js"></script>
+    <script src="Scripts/customScript.js"></script>
+</body>
+</html>
